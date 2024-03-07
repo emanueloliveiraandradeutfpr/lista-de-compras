@@ -6,7 +6,7 @@ O frontend da aplicação foi desenvolvido com JavaScript e o backend foi simula
 
 ## Endereço de Deploy - GitHub Pages
 
-https://utfpr-gp.github.io/roubank-app/
+https://emanueloliveiraandradeutfpr.github.io/lista-de-compras/
 
 ## Protótipo
 
