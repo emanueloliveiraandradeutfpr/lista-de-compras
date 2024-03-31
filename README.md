@@ -10,7 +10,7 @@ https://emanueloliveiraandradeutfpr.github.io/lista-de-compras/
 
 ## Protótipo
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+https://www.figma.com/file/Upv1wDCIL1CDQk0dxKxspV/Web2?type=design&node-id=0-1&mode=design&t=Jxnm72yLoZgBIE8z-0
 
 ## Checklist
 
