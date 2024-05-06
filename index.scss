@@ -1,5 +1,11 @@
 @import "assets/resources/styles/sass/materialize.scss";
 
+@font-face {
+    font-family: "Passion One";
+    src: url(assets/resources/fonts/Passion_One/PassionOne-Bold.ttf) format('truetype'), url(assets/resources/fonts/Passion_One/PassionOne-Regular.ttf) format('truetype');
+}
+
+
 .passion-one-regular {
     font-family: "Passion One", sans-serif;
     font-weight: 400;

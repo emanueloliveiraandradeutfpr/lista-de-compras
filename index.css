@@ -2546,7 +2546,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: -apple-system, Passion One, Roboto, sans-serif;
+  font-family: -apple-system, Roboto, sans-serif;
 }
 
 ul:not(.browser-default) {
@@ -4229,7 +4229,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: -apple-system, Passion One, Roboto, sans-serif;
+  font-family: -apple-system, Roboto, sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -7588,6 +7588,10 @@ input[type=range]::-ms-thumb {
   .datepicker-day-button {
     line-height: 44px;
   }
+}
+@font-face {
+  font-family: "Passion One";
+  src: url(assets/resources/fonts/Passion_One/PassionOne-Bold.ttf) format("truetype"), url(assets/resources/fonts/Passion_One/PassionOne-Regular.ttf) format("truetype");
 }
 .passion-one-regular {
   font-family: "Passion One", sans-serif;
