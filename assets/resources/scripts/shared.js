@@ -1,7 +1,9 @@
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn ? '/menu.html' : '/menu-anonimo.html';
+    let menu = isLogeedIn
+        ? '/lista-de-compras/menu.html'
+        : '/lista-de-compras/menu-anonimo.html';
     $('#menu').load(menu);
-    $('#footer').load('/footer.html');
+    $('#footer').load('/lista-de-compras/footer.html');
 });
