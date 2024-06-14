@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Passion One";
-  src: url(/assets/resources/fonts/Passion_One/PassionOne-Bold.ttf) format("truetype"), url(/assets/resources/fonts/Passion_One/PassionOne-Regular.ttf) format("truetype");
+  src: url(assets/resources/fonts/Passion_One/PassionOne-Bold.ttf) format("truetype"), url(assets/resources/fonts/Passion_One/PassionOne-Regular.ttf) format("truetype");
 }
 
 .passion-one-regular {
