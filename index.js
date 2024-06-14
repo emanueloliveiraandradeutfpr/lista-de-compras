@@ -8,9 +8,11 @@ $(function () {
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn ? `${env.BASE_URL}/menu.html` : `${BASE_URL}/menu-anonimo.html`;
-    $('#menu').load(menu);
-    $('#footer').load(`${BASE_URL}/footer.html`);
+    let menu = isLogeedIn
+        ? `${process.env.BASE_URL}/menu.html`
+        : `${env.BASE_URL}/menu-anonimo.html`;
+    $('#menu').load(`${env.BASE_URL}/menu.html`);
+    $('#footer').load(`${env.BASE_URL}/footer.html`);
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
