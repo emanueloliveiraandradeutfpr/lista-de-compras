@@ -6,7 +6,6 @@ $(function () {
     let aux = $('.dropdown-trigger');
     aux.dropdown();
 });
-
 $(function () {
     let isLogeedIn = true;
 
