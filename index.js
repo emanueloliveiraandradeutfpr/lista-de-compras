@@ -2,6 +2,7 @@ $(function () {
     $(document).ready(function () {
         $('.sidenav').sidenav();
     });
+    console.log('Oi');
 
     let aux = $('.dropdown-trigger');
     aux.dropdown();
