@@ -8,10 +8,11 @@ $(function () {
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn
-        ? '${{ env.mascot }}/menu.html'
-        : `${env.BASE_URL}/menu-anonimo.html`;
-    $('#menu').load(menu);
+    let url = ${{env.BASE_URL}}
+    // let menu = isLogeedIn
+    //     ? '${{ env.mascot }}/menu.html'
+    //     : `${url}/menu-anonimo.html`;
+    $('#menu').load(url);
     //$('#footer').load(`${env.BASE_URL}/footer.html`);
 
     window.setTimeout(function () {
