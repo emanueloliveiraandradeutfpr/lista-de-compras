@@ -9,9 +9,9 @@ $(function () {
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn ? '/app/menu.html' : '/app/menu-anonimo.html';
+    let menu = isLogeedIn ? 'menu.html' : 'menu-anonimo.html';
     $('#menu').load(menu);
-    $('#footer').load('/app/footer.html');
+    $('#footer').load('footer.html');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
