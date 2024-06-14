@@ -11,8 +11,8 @@ $(function () {
     // let menu = isLogeedIn ? '../menu.html' : '../menu-anonimo.html';
     // $('#menu').load(menu);
     // $('#footer').load('../footer.html');
-    $('#footer').load('lista-de-compras/footer.html');
-    $('#menu').load('lista-de-compras/menu.html');
+    $('#footer').load('/lista-de-compras/footer.html');
+    $('#menu').load('/lista-de-compras/menu.html');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
