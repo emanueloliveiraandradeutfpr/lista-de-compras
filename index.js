@@ -9,10 +9,10 @@ $(function () {
     let isLogeedIn = true;
 
     let menu = isLogeedIn
-        ? '/lista-de-compras/menu.html'
-        : '/lista-de-compras/menu-anonimo.html';
+        ? '/LISTA_DE_COMPRAS/menu.html'
+        : '/LISTA_DE_COMPRAS/menu-anonimo.html';
     $('#menu').load(menu);
-    $('#footer').load('/lista-de-compras/footer.html');
+    $('#footer').load('/LISTA_DE_COMPRAS/footer.html');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
