@@ -8,7 +8,7 @@ $(function () {
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn ? `${BASE_URL}/menu.html` : `${BASE_URL}/menu-anonimo.html`;
+    let menu = isLogeedIn ? `${env.BASE_URL}/menu.html` : `${BASE_URL}/menu-anonimo.html`;
     $('#menu').load(menu);
     $('#footer').load(`${BASE_URL}/footer.html`);
 
