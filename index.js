@@ -2,18 +2,17 @@ $(function () {
     $(document).ready(function () {
         $('.sidenav').sidenav();
     });
-    console.log('Oi');
-
     let aux = $('.dropdown-trigger');
     aux.dropdown();
 });
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn ? 'menu.html' : 'menu-anonimo.html';
+    let menu = isLogeedIn
+        ? '/lista-de-compras/menu.html'
+        : '/lista-de-compras/menu-anonimo.html';
     $('#menu').load(menu);
-    $('#footer').load('footer.html');
-    console.log('Oi');
+    $('#footer').load('/lista-de-compras/footer.html');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
