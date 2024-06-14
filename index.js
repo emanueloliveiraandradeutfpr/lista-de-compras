@@ -11,8 +11,8 @@ $(function () {
     let menu = isLogeedIn
         ? '${{ env.mascot }}/menu.html'
         : `${env.BASE_URL}/menu-anonimo.html`;
-    $('#menu').load(`${env.BASE_URL}/menu.html`);
-    $('#footer').load(`${env.BASE_URL}/footer.html`);
+    $('#menu').load(menu);
+    //$('#footer').load(`${env.BASE_URL}/footer.html`);
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
