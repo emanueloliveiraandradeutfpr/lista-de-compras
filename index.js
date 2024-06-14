@@ -9,7 +9,7 @@ $(function () {
     let isLogeedIn = true;
 
     let menu = isLogeedIn
-        ? '/LISTA_DE_COMPRAS/menu.html'
+        ? `/${LISTA_DE_COMPRAS}/menu.html`
         : '/LISTA_DE_COMPRAS/menu-anonimo.html';
     $('#menu').load(menu);
     $('#footer').load('/LISTA_DE_COMPRAS/footer.html');
