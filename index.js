@@ -12,6 +12,7 @@ $(function () {
     let menu = isLogeedIn ? 'menu.html' : 'menu-anonimo.html';
     $('#menu').load(menu);
     $('#footer').load('footer.html');
+    console.log('Oi');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
