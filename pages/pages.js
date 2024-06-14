@@ -2,18 +2,17 @@ $(function () {
     $(document).ready(function () {
         $('.sidenav').sidenav();
     });
-    console.log('Oi');
-
     let aux = $('.dropdown-trigger');
     aux.dropdown();
 });
 $(function () {
     let isLogeedIn = true;
 
-    let menu = isLogeedIn ? 'menu.html' : 'menu-anonimo.html';
-    $('#menu').load(menu);
+    // let menu = isLogeedIn ? '../menu.html' : '../menu-anonimo.html';
+    // $('#menu').load(menu);
+    // $('#footer').load('../footer.html');
     $('#footer').load('footer.html');
-    console.log('Oi');
+    $('#menu').load('menu.html');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
