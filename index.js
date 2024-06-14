@@ -9,7 +9,7 @@ $(function () {
     let isLogeedIn = true;
 
     let menu = isLogeedIn
-        ? `${{ env.BASE_URL}}/menu.html` 
+        ? `${env.BASE_URL}/menu.html`
         : `${env.BASE_URL}/menu-anonimo.html`;
     $('#menu').load(`${env.BASE_URL}/menu.html`);
     $('#footer').load(`${env.BASE_URL}/footer.html`);
