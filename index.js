@@ -8,7 +8,7 @@ $(function () {
 $(function () {
     let isLogeedIn = true;
 
-    let url = vars.BASE_URL;
+    let url = process.env.BASE_URL;
     // let menu = isLogeedIn
     //     ? '${{ env.mascot }}/menu.html'
     //     : `${url}/menu-anonimo.html`;
