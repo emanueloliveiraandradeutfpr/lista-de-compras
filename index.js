@@ -7,6 +7,7 @@ $(function () {
 });
 $(function () {
     let isLogeedIn = true;
+    require('dotenv').config();
 
     let url = process.env.BASE_URL;
     // let menu = isLogeedIn
