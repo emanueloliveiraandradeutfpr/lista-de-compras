@@ -7,14 +7,12 @@ $(function () {
 });
 $(function () {
     let isLogeedIn = true;
-    require('dotenv').config();
 
-    let url = process.env.BASE_URL;
-    // let menu = isLogeedIn
-    //     ? '${{ env.mascot }}/menu.html'
-    //     : `${url}/menu-anonimo.html`;
-    $('#menu').load(url);
-    //$('#footer').load(`${env.BASE_URL}/footer.html`);
+    let menu = isLogeedIn
+        ? '/lista-de-compras/menu.html'
+        : '/lista-de-compras/menu-anonimo.html';
+    $('#menu').load(menu);
+    $('#footer').load('/lista-de-compras/footer.html');
 
     window.setTimeout(function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
