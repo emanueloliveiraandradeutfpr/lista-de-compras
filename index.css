@@ -3,6 +3,17 @@
   src: url(assets/resources/fonts/Passion_One/PassionOne-Bold.ttf) format("truetype"), url(assets/resources/fonts/Passion_One/PassionOne-Regular.ttf) format("truetype");
 }
 
+body {
+  width: 100%;
+  height: 99%;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .passion-one-regular {
   font-family: "Passion One", sans-serif;
   font-weight: 400;
@@ -29,4 +40,8 @@
 
 #dropdown1 {
   top: 60px !important;
+}
+
+.space {
+  margin-top: 50px;
 }

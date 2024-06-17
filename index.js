@@ -21,7 +21,8 @@ $(function () {
         elems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(elems, {});
 
-        // elems = document.querySelectorAll('.modal');
-        // M.Modal.init(elems, {});
+        $(document).ready(function () {
+            M.updateTextFields();
+        });
     }, 1000);
 });
