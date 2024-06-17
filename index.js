@@ -26,7 +26,7 @@ $(function () {
                 data: {
                     Arroz: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREKvCrhtFVMIBXymizP0Wa3gD_X5YpsyRWhA&s',
                     Feijao: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6E0uwPD5-L_Sj4vpI71pVhx2y69LqSbgYEQ&s',
-                    Carne: '/lista-de-compras/assets/resources/images/carne,jpeg',
+                    Carne: '/lista-de-compras/assets/resources/images/carne.jpeg',
                 },
             });
         });
