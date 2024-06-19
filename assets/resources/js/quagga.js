@@ -22,5 +22,5 @@ Quagga.init(
 
 Quagga.onDetected((data) => {
     console.log(data);
-    document.querySelector('#resultado').innerText = data.codeResult.code;
+    document.querySelector('#resultado').innerText = data.codeResult;
 });
