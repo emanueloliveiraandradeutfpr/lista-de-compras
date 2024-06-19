@@ -1,11 +1,4 @@
 $(function () {
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-    let aux = $('.dropdown-trigger');
-    aux.dropdown();
-});
-$(function () {
     let isLogeedIn = true;
 
     let menu = isLogeedIn
@@ -15,6 +8,11 @@ $(function () {
     $('#footer').load('/lista-de-compras/footer.html');
 
     window.setTimeout(function () {
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+        let aux = $('.dropdown-trigger');
+        aux.dropdown();
         var elems = document.querySelectorAll('.dropdown-trigger');
         M.Dropdown.init(elems, {});
 

@@ -50,3 +50,9 @@ main {
 #dropdown1 {
   top: 60px !important;
 }
+
+.bg-search {
+  height: 70px;
+  border-radius: 50px;
+  background-color: #D9D9D9;
+}
