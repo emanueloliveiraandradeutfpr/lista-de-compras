@@ -9,8 +9,9 @@ function iniciarLeitor() {
             },
             decoder: {
                 readers: ['ean_reader'],
+                locate: true,
+                multiple: false,
             },
-            multiple: false,
         },
         function (err) {
             if (err) {
@@ -19,18 +20,21 @@ function iniciarLeitor() {
             }
             console.log('Initialization finished. Ready to start');
             Quagga.start();
+            $('#camera').show();
         },
     );
 
     // logica do codigo de barras
-    let token = 'FZuLNEaq-XQGuNKG3i7sMg';
+    let token = 'g7oRjF9hCbu5YdQ1R5HO-g';
     Quagga.onDetected((data) => {
         //let test = data.codeResult.code;
         let test = 7891150064331;
         Quagga.stop();
+        $('#camera').hide();
         postData();
         async function postData(
-            url = `https://api.cosmos.bluesoft.com.br/gtins/${test}.json`,
+            // url = `https://api.cosmos.bluesoft.com.br/gtins/${test}.json`,
+            url = `https://api.cosmos.bluesoft.com.br//products?query=${test}`,
             data = {},
         ) {
             // Default options are marked with *
@@ -42,6 +46,7 @@ function iniciarLeitor() {
                 },
             });
             let aux = await req.json();
+            $('#response').html(aux);
             console.log(aux);
         }
     });

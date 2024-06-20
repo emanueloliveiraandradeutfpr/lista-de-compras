@@ -13,14 +13,17 @@ main {
   flex: 1 0 auto;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.full-screen {
+  flex-grow: 1;
 }
 
-.full-screen {
-  height: 60vh;
+video {
+  width: 100%;
+  height: auto;
+}
+
+canvas {
+  display: none;
 }
 
 .passion-one-regular {
