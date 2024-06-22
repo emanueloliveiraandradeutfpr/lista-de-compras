@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busca de preços de alimentos na região de guarapuava">
+    <meta http-equiv="content-security-policy">
+    <title>Menor Preço</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
+    <link rel="stylesheet" href="/lista-de-compras/index.css">
+    <link rel="shortcut icon" href="/lista-de-compras/assets/resources/images/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="list.css">
+
+</head>
+
+<body>
+    <div id="menu"></div>
+    <h1>Minhas Listas</h1>
+    <div class="divider"></div>
+    <div class="full-screen">
+        <ul class="collapsible list">
+            <li id="card-model">
+                <div class="collapsible-header flex">
+                    <img class="responsive-img barcode" width="100px" height="67px" src="">
+                    <div class="title ">Title</div>
+                </div>
+                <div class="collapsible-body">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <div class="card-content">
+                                <p class="collection-item">GTIN: <span class="gtin"></span></p>
+                                <p class="collection-item">Preço: <span class="price"></span></p>
+                                <p class="collection-item">Loja Nome: <span class="store-name"></span></p>
+                                <p class="collection-item">Loja Endereço: <span
+                                        class="store-address"></span></p>
+                                <p class="collection-item">Marca: <span class="brand"></span></p>
+                                <img id="img" width="100px" height="100px" src="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="footer"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="/lista-de-compras/index.js"></script>
+    <script type="module" src="/lista-de-compras/pages/my-list/list.js"></script>
+</body>

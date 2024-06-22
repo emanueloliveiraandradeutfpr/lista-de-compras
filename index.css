@@ -3,6 +3,43 @@
   src: url(assets/resources/fonts/Passion_One/PassionOne-Bold.ttf) format("truetype"), url(assets/resources/fonts/Passion_One/PassionOne-Regular.ttf) format("truetype");
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.full-screen {
+  flex-grow: 1;
+}
+
+.card-image {
+  align-content: center;
+
+}
+
+.codebar {
+  margin-bottom: 15px;
+}
+
+video {
+  width: 90%;
+  height: 50vh;
+}
+
+canvas {
+  display: none !important;
+}
+
+#barcode {
+  background-color: #1565C0;
+  border-radius: 10px;
+}
+
 .passion-one-regular {
   font-family: "Passion One", sans-serif;
   font-weight: 400;
@@ -29,4 +66,10 @@
 
 #dropdown1 {
   top: 60px !important;
+}
+
+.bg-search {
+  height: 70px;
+  border-radius: 50px;
+  background-color: #D9D9D9;
 }
