@@ -17,13 +17,27 @@ main {
   flex-grow: 1;
 }
 
+.card-image {
+  align-content: center;
+
+}
+
+.codebar {
+  margin-bottom: 15px;
+}
+
 video {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 50vh;
 }
 
 canvas {
-  display: none;
+  display: none !important;
+}
+
+#barcode {
+  background-color: #1565C0;
+  border-radius: 10px;
 }
 
 .passion-one-regular {

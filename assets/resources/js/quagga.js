@@ -1,3 +1,6 @@
+import postData from '/lista-de-compras/service/quagga.service.js';
+
+$('#barcode').on('click', iniciarLeitor);
 function iniciarLeitor() {
     // iniciar camera
     Quagga.init(
@@ -20,34 +23,16 @@ function iniciarLeitor() {
             }
             console.log('Initialization finished. Ready to start');
             Quagga.start();
-            $('#camera').show();
+            $('#camera').show().addClass('center');
         },
     );
 
     // logica do codigo de barras
-    let token = 'g7oRjF9hCbu5YdQ1R5HO-g';
     Quagga.onDetected((data) => {
-        //let test = data.codeResult.code;
-        let test = 7891150064331;
+        let id = data.codeResult.code;
+        //let id = 7891150064331;
         Quagga.stop();
-        $('#camera').hide();
-        postData();
-        async function postData(
-            // url = `https://api.cosmos.bluesoft.com.br/gtins/${test}.json`,
-            url = `https://api.cosmos.bluesoft.com.br//products?query=${test}`,
-            data = {},
-        ) {
-            // Default options are marked with *
-            const req = await fetch(url, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Cosmos-Token': token,
-                    'User-Agent': 'Cosmos-API-Request',
-                },
-            });
-            let aux = await req.json();
-            $('#response').html(aux);
-            console.log(aux);
-        }
+        $('#camera').html('');
+        postData(id);
     });
 }
