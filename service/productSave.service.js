@@ -2,7 +2,7 @@ export class ProductSaveService {
     constructor() {}
 
     // Constante para a chave do armazenamento local
-    LOCAL_STORAGE_KEY = 'itens';
+    LOCAL_STORAGE_KEY = 'items';
 
     saveLocal(product) {
         // Obtendo relatórios do armazenamento local

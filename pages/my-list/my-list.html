@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
     <link rel="stylesheet" href="/lista-de-compras/index.css">
     <link rel="shortcut icon" href="/lista-de-compras/assets/resources/images/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="list.css">
 
 </head>
 
@@ -22,32 +23,34 @@
     <h1>Minhas Listas</h1>
     <div class="divider"></div>
     <div class="full-screen">
-        <div class="row container">
-            <div id="card-model" class="col s12 m5">
-                <div class="card">
-                    <p class="title center">Title</p>
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img id="img" src="">
-                        </div>
-                        <div class="card-stacked">
+        <ul class="collapsible list">
+            <li id="card-model">
+                <div class="collapsible-header flex">
+                    <img class="responsive-img barcode" width="100px" height="67px" src="">
+                    <div class="title ">Title</div>
+                </div>
+                <div class="collapsible-body">
+                    <div class="card-stacked">
+                        <div class="card-content">
                             <div class="card-content">
-                                <div class="card-content">
-                                    <p class="collection-item brand">Marca</p>
-                                    <p class="collection-item price">Preço</p>
-                                    <p class="collection-item store-name">Loja nome</p>
-                                    <p class="collection-item store-address">Loja endereço</p>
-                                </div>
+                                <p class="collection-item">GTIN: <span class="gtin"></span></p>
+                                <p class="collection-item">Preço: <span class="price"></span></p>
+                                <p class="collection-item">Loja Nome: <span class="store-name"></span></p>
+                                <p class="collection-item">Loja Endereço: <span
+                                        class="store-address"></span></p>
+                                <p class="collection-item">Marca: <span class="brand"></span></p>
+                                <img id="img" width="100px" height="100px" src="">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="footer"></div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="/lista-de-compras/index.js"></script>
-        <script src="/lista-de-compras/pages/my-list/list.js"></script>
+            </li>
+        </ul>
+    </div>
+    <div id="footer"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="/lista-de-compras/index.js"></script>
+    <script type="module" src="/lista-de-compras/pages/my-list/list.js"></script>
 </body>

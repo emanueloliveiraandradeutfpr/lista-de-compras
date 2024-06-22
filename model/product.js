@@ -1,9 +1,11 @@
 export default class Product {
-    constructor(name, price, thumbnail, brand, store) {
+    constructor(name, gtin, price, image, brand, store, barcode) {
         this.name = name;
+        this.gtin = gtin;
         this.price = price;
-        this.thumbnail = thumbnail;
+        this.image = image;
         this.brand = brand;
         this.store = store;
+        this.barcode_image = barcode;
     }
 }
