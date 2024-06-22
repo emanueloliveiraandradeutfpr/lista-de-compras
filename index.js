@@ -1,3 +1,5 @@
+import postData from '/lista-de-compras/service/quagga.service.js';
+
 $(function () {
     let isLogeedIn = true;
 
@@ -19,17 +21,18 @@ $(function () {
         elems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(elems, {});
 
-        $(document).ready(function () {
-            $('input.autocomplete').autocomplete({
-                data: {
-                    Arroz: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREKvCrhtFVMIBXymizP0Wa3gD_X5YpsyRWhA&s',
-                    Feijao: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6E0uwPD5-L_Sj4vpI71pVhx2y69LqSbgYEQ&s',
-                    Carne: '/lista-de-compras/assets/resources/images/carne.jpeg',
-                },
-            });
+        $('.collapsible').collapsible();
+        $('input.autocomplete').autocomplete({
+            data: {
+                Arroz: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREKvCrhtFVMIBXymizP0Wa3gD_X5YpsyRWhA&s',
+                Feijao: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6E0uwPD5-L_Sj4vpI71pVhx2y69LqSbgYEQ&s',
+                Carne: '/lista-de-compras/assets/resources/images/carne.jpeg',
+            },
+            onAutocomplete: () => {
+                postData($('input.autocomplete').val());
+            },
         });
-        $(document).ready(function () {
-            M.updateTextFields();
-        });
+
+        M.updateTextFields();
     }, 1000);
 });
