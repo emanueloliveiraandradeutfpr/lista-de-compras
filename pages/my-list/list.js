@@ -1,6 +1,6 @@
 $(function loadAndDisplayProducts() {
     // Obtém os produtos do localStorage
-    const products = JSON.parse(localStorage.getItem('itens')) || [];
+    const products = JSON.parse(localStorage.getItem('items')) || [];
 
     // Obtém a referência ao da lista no HTML
     const productList = $('.list');
@@ -21,10 +21,11 @@ $(function loadAndDisplayProducts() {
         clonedCard.querySelector('.price').textContent = `R$${product.price}`;
         clonedCard.querySelector('#img').src = product.image;
         clonedCard.querySelector('.brand').textContent = product.brand
-            ? product.brand
+            ? product.brand?.name
             : 'Não cadastrado';
         clonedCard.querySelector('.store-name').textContent = product.store.NAME;
         clonedCard.querySelector('.store-address').textContent = product.store.ENDERECO;
+        console.log(product);
 
         productList.append(clonedCard);
     }
