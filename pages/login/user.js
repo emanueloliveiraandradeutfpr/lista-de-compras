@@ -64,6 +64,7 @@ function loginSubmitHandler() {
                 if (element.email === email) {
                     if (element.password === password) {
                         console.log('Successo:' + response);
+                        localStorage.setItem('id', element.id);
                         alertify.success('Entrou com sucesso!');
                         setTimeout(
                             (window.location.href =
