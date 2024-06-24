@@ -5426,8 +5426,8 @@ small {
 
 .btn-floating.halfway-fab {
   position: absolute;
-  right: 24px;
-  bottom: -20px;
+  right: 10px;
+  top: 25px
 }
 
 .btn-floating.halfway-fab.left {
@@ -5451,7 +5451,6 @@ button.btn-floating {
 .fixed-action-btn {
   position: fixed;
   right: 23px;
-  bottom: 23px;
   padding-top: 15px;
   margin-bottom: 0;
   z-index: 997;

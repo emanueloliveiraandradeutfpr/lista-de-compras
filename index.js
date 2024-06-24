@@ -10,9 +10,8 @@ $(function () {
     $('#footer').load('/lista-de-compras/footer.html');
 
     window.setTimeout(function () {
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-        });
+        $('.sidenav').sidenav();
+        $('.fixed-action-btn').floatingActionButton();
         let aux = $('.dropdown-trigger');
         aux.dropdown();
         var elems = document.querySelectorAll('.dropdown-trigger');
