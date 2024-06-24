@@ -2605,14 +2605,14 @@ a {
 }
 
 .flex {
-  display: flex;
+  display: flex !important;
   gap: 10px;
 }
 
 .valign-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .clearfix {
@@ -5382,7 +5382,7 @@ small {
   height: 40px;
   line-height: 40px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: #26a69ab8;
   border-radius: 50%;
   transition: background-color 0.3s;
   cursor: pointer;
@@ -5426,7 +5426,7 @@ small {
 
 .btn-floating.halfway-fab {
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 25px
 }
 

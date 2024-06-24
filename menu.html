@@ -10,8 +10,6 @@
                     class="small material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down flex roboto-bold">
                 <li><a href="/lista-de-compras/pages/my-list/my-list.html">Minhas Listas</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="">Javascript</a></li>
                 <li><a class="dropdown-trigger" data-target="dropdown1" href="#!">
                         <i class="small material-icons">account_circle</i>
                         <i class="material-icons right">arrow_drop_down</i>
@@ -19,10 +17,12 @@
                 </li>
             </ul>
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="/lista-de-compras/pages/account.html">Minha conta</a></li>
-                <li><a href="#!">two</a></li>
+                <li><a href="/lista-de-compras/pages/login/user.html">Minha conta</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">three</a></li>
+                <li> <a onclick="M.toast({html: 'Saiu'})" class="flex" href="#!">Sair
+                        <i class="material-icons right">input</i>
+                    </a>
+                </li>
             </ul>
 
             <a class="hide-on-large-only right dropdown-trigger" href="#!" data-target="dropdown1">
