@@ -1,6 +1,6 @@
 import { ProductService } from '/lista-de-compras/service/product.service.js';
 
-$(function loadAndDisplayProducts() {
+function loadAndDisplayProducts() {
     let user = localStorage.getItem('id');
 
     const productList = $('.list');
@@ -46,8 +46,9 @@ $(function loadAndDisplayProducts() {
         }
         alert('Precisa estar logado');
     }
-});
+}
 
+$(loadAndDisplayProducts());
 $('button').on('click', function () {
     let card = $(this.parentElement);
 
