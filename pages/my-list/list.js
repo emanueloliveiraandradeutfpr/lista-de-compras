@@ -10,6 +10,7 @@ $(function loadAndDisplayProducts() {
     productList.html('');
 
     if (user) {
+        let button = $('.add-cart');
         const products = new ProductService();
         products.listProducts().then((result) => {
             // Itera sobre os relatórios e os adiciona à lista no HTML
@@ -17,6 +18,9 @@ $(function loadAndDisplayProducts() {
                 const product = result[i];
 
                 const clonedCard = cardModel.cloneNode(true);
+                button.clone(true).removeClass('hide').appendTo(clonedCard);
+
+                clonedCard.querySelector('.id').textContent = product.id;
                 clonedCard.querySelector('.barcode').src = product.barcode_image;
                 clonedCard.querySelector('.title').textContent = product.name;
                 clonedCard.querySelector('.gtin').textContent = product.gtin;
@@ -40,5 +44,15 @@ $(function loadAndDisplayProducts() {
         } else {
             $('#no-result').hide();
         }
+        alert('Precisa estar logado');
     }
+});
+
+$('button').on('click', function () {
+    let card = $(this.parentElement);
+
+    let product = new ProductService();
+    product
+        .deleteProducts(card[0].querySelector('.id').textContent)
+        .then(alertify.error('Test'));
 });

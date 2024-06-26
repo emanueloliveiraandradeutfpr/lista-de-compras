@@ -1,4 +1,4 @@
-import postData from '/lista-de-compras/service/quagga.service.js';
+import getData from '/lista-de-compras/service/quagga.service.js';
 
 $('#barcode').on('click', iniciarLeitor);
 function iniciarLeitor() {
@@ -33,6 +33,6 @@ function iniciarLeitor() {
         //let id = 7891150064331;
         Quagga.stop();
         $('#camera').html('');
-        postData(id);
+        getData(id);
     });
 }

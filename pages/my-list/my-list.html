@@ -20,13 +20,10 @@
 
 <body>
     <div id="menu"></div>
-    <h2>Minhas Listas</h2>
-    <div class="divider"></div>
+    <h2>Resultado</h2>
     <div class="full-screen">
         <ul class="collapsible list">
             <li id="card-model" class="card">
-                <a class="btn-floating halfway-fab waves-effect waves-light "><i
-                        class="material-icons">add_shopping_cart</i></a>
 
                 <div class="collapsible-header flex content-center ">
                     <img class=" barcode " height="67px" src="">
@@ -36,6 +33,7 @@
                 <div class="collapsible-body">
                     <div class="card-stacked">
                         <div class="card-content">
+                            <p class="collection-item">ID:: <span class="id"></span></p>
                             <p class="collection-item">GTIN: <span class="gtin"></span></p>
                             <p class="collection-item">Preço: <span class="price"></span></p>
                             <p class="collection-item">Loja Nome: <span class="store-name"></span></p>
@@ -48,6 +46,9 @@
                 </div>
             </li>
         </ul>
+        <button class="add-cart btn-floating halfway-fab hide">
+            <i class="material-icons red">remove_shopping_cart</i>
+        </button>
         <!-- spinner de carregamento -->
         <div id="user-spinner" class="col s12 center-block preloader-wrapper big active">
             <div class="spinner-layer spinner-blue-only">
@@ -72,6 +73,7 @@
 
         <!-- sem resultado -->
     </div>
+
 
     <div id="footer"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
