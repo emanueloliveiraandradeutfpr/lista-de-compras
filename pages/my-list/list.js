@@ -52,7 +52,7 @@ $('button').on('click', function () {
     let card = $(this.parentElement);
 
     let product = new ProductService();
-    product
-        .deleteProducts(card[0].querySelector('.id').textContent)
-        .then(alertify.error('Test'));
+    product.deleteProducts(card[0].querySelector('.id').textContent).then(() => {
+        alertify.error('Test');
+    });
 });
