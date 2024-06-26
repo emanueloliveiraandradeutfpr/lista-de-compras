@@ -82,5 +82,8 @@ $('button').on('click', function () {
         Superpão,
         card[0].querySelector('.barcode').src,
     );
-    produtoService.insertProductWithFetch(produto);
+    produtoService.insertProductWithFetch(produto).then(() => {
+        alertify.success('Cadatrado com sucesso');
+        loadAndDisplayProducts();
+    });
 });

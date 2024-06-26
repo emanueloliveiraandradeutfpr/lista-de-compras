@@ -53,6 +53,7 @@ $('button').on('click', function () {
 
     let product = new ProductService();
     product.deleteProducts(card[0].querySelector('.id').textContent).then(() => {
-        alertify.error('Test');
+        alertify.success('Removido com sucesso');
+        loadAndDisplayProducts();
     });
 });
