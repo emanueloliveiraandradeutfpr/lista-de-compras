@@ -10,12 +10,15 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Alertfy css -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+
+
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
     <link rel="stylesheet" href="/lista-de-compras/index.css">
     <link rel="shortcut icon" href="/lista-de-compras/assets/resources/images/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="list.css">
-
+    <link rel="stylesheet" href="result.css">
 </head>
 
 <body>
@@ -33,7 +36,7 @@
                 <div class="collapsible-body">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p class="collection-item">ID:: <span class="id"></span></p>
+                            <p class="collection-item">ID: <span class="id"></span></p>
                             <p class="collection-item">GTIN: <span class="gtin"></span></p>
                             <p class="collection-item">Preço: <span class="price"></span></p>
                             <p class="collection-item">Loja Nome: <span class="store-name"></span></p>
@@ -47,7 +50,7 @@
             </li>
         </ul>
         <button class="add-cart btn-floating halfway-fab hide">
-            <i class="material-icons red">remove_shopping_cart</i>
+            <i class="material-icons">add_shopping_cart</i>
         </button>
         <!-- spinner de carregamento -->
         <div id="user-spinner" class="col s12 center-block preloader-wrapper big active">
@@ -74,11 +77,11 @@
         <!-- sem resultado -->
     </div>
 
-
     <div id="footer"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     <script type="module" src="/lista-de-compras/index.js"></script>
-    <script type="module" src="/lista-de-compras/pages/my-list/list.js"></script>
+    <script type="module" src="/lista-de-compras/pages/result/result.js"></script>
 </body>

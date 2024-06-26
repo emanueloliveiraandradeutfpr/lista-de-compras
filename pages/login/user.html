@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busca de preços de alimentos na região de guarapuava">
+    <meta http-equiv="content-security-policy">
+    <title>Menor Preço</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Alertify css -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
+    <link rel="stylesheet" href="/lista-de-compras/index.css">
+    <link rel="shortcut icon" href="/lista-de-compras/assets/resources/images/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="user.css">
+
+</head>
+
+<body>
+    <div id="menu"></div>
+    <div class="full-screen content-center">
+        <form id="login-form">
+            <div class="row login">
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="input-email" type="email" class="validate" required>
+                    <label for="input-email">Email</label>
+                    <span class="helper-text" data-error="Email deve conter @"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="input-password" type="password" class="validate"
+                        pattern="^[A-Za-z\d]{6,}$" required>
+                    <label for="input-password">Password</label>
+                    <span class="helper-text" data-error="A senha Deve
+                        contem no mínimo 6 caracteres" data-success=""></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col offset-m2 flex">
+                    <button id="create" class="btn waves-effect waves-light" type="button" name="create">Criar Conta
+                        <i class="material-icons right">add</i>
+                    </button>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Entrar
+                        <i class="material-icons right">send</i>
+                </div>
+
+
+                </button>
+            </div>
+        </form>
+        <form id="sign-form" class="hide">
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="input-name" type="text" class="validate" pattern="^[A-Za-z\d]{6,}$" required>
+                    <label for="input-name">Nome</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="email" type="email" class="validate" placeholder="usuario@email.com" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="password" type="password" class="validate" required>
+                    <label for="password">Senha</label>
+                    <span class="helper-text" data-error="wrong" data-success="">A senha deve
+                        contem no mínimo 6 caracteres"</span>
+                </div>
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="repassword" type="password" class="validate" required>
+                    <label for="repassword">Repita a senha</label>
+                    <span class="helper-text" data-error="wrong" data-success="">A senha deve
+                        ser igual"
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light col s12 m6 offset-m2" type="submit"
+                    name="action">Cadastrar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="/lista-de-compras/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script type="module" src="user.js"></script>
+</body>
