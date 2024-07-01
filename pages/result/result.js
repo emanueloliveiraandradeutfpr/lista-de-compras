@@ -16,7 +16,7 @@ $(function loadAndDisplayProducts() {
     $('#user-spinner').hide();
 
     let button = $('.add-cart');
-    productList.html('');
+    productList.html('').hide();
 
     if (searchKey) {
         results.then(
@@ -45,21 +45,21 @@ $(function loadAndDisplayProducts() {
                         Superpão.ENDERECO;
                     console.log(product);
                     productList.append(clonedCard);
+
+                    productList.fadeIn(4000);
                 }
             },
             (error) => {
                 let msg = String(error).split('  ');
                 alertify.error(msg[0]);
                 alertify.error('Try again later');
+                $('#user-spinner').hide();
+                $('#no-result').show();
             },
         );
     } else {
-        $('#user-spinner').hide();
-        if (user == null) {
-            $('#no-result').show();
-        } else {
-            $('#no-result').hide();
-        }
+        $('#no-result').show();
+        alert('Sem chave de busca');
     }
 
     // let storage = new ProductService();
@@ -82,6 +82,8 @@ $('button').on('click', function () {
         Superpão,
         card[0].querySelector('.barcode').src,
     );
+    let user_id = localStorage.getItem('id');
+    produto.userId = user_id;
     produtoService.insertProductWithFetch(produto).then(() => {
         alertify.success('Cadatrado com sucesso');
         loadAndDisplayProducts();

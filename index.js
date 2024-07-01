@@ -19,6 +19,7 @@ $(function () {
 
         elems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(elems, {});
+        $('select').formSelect();
 
         $('.collapsible').collapsible();
         $('input.autocomplete').autocomplete({

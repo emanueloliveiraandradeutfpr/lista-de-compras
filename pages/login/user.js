@@ -1,4 +1,5 @@
 import { User } from '/lista-de-compras/model/user.js';
+import { Gender } from '/lista-de-compras/model/gender.js';
 import { UserService } from '/lista-de-compras/service/user.service.js';
 
 function manageSubmitButton(toogleForm) {
@@ -18,11 +19,16 @@ function signSubmitHandler() {
     let userService = new UserService();
     document.getElementById('sign-form').addEventListener('submit', function (event) {
         event.preventDefault();
+        console.log($('#input-gender').val());
 
         const name = document.getElementById('input-name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const repassword = document.getElementById('repassword').value;
+        const gender =
+            document.querySelector('#input-gender').value === 'male'
+                ? Gender.MALE
+                : Gender.FEMALE;
 
         //validação manual dentro do onSubmit - segunda fase de validação
 
@@ -37,7 +43,7 @@ function signSubmitHandler() {
         }
 
         //cadastra o paciente com os dados validados
-        let user = new User(name, email, password);
+        let user = new User(name, email, password, gender);
 
         userService
             .insertUserWithFetch(user)

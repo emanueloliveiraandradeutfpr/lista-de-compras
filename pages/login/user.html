@@ -27,7 +27,8 @@
         <form id="login-form">
             <div class="row login">
                 <div class="input-field col s12 m6 offset-m2">
-                    <input id="input-email" type="email" class="validate" required>
+                    <input id="input-email" type="email" class="validate"
+                        pattern="^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)*$" required>
                     <label for="input-email">Email</label>
                     <span class="helper-text" data-error="Email deve conter @"></span>
                 </div>
@@ -63,22 +64,33 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m6 offset-m2">
-                    <input id="email" type="email" class="validate" placeholder="usuario@email.com" required>
+                    <input id="email" type="email" class="validate" placeholder="usuario@email.com"
+                        pattern="^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)*$" required>
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m6 offset-m2">
-                    <input id="password" type="password" class="validate" required>
+                    <select id="input-gender" required>
+                        <option value="" disabled selected>Genero</option>
+                        <option value="male" selected>Masculino</option>
+                        <option value="female">Feminino</option>
+                    </select>
+                    <label>Genero</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m2">
+                    <input id="password" type="password" class="validate" minlength="6" required>
                     <label for="password">Senha</label>
-                    <span class="helper-text" data-error="wrong" data-success="">A senha deve
-                        contem no mínimo 6 caracteres"</span>
+                    <span class="helper-text" data-error="A senha deve
+                        contem no mínimo 6 caracteres" data-success=""></span>
                 </div>
                 <div class="input-field col s12 m6 offset-m2">
-                    <input id="repassword" type="password" class="validate" required>
+                    <input id="repassword" type="password" class="validate" minlength="6" required>
                     <label for="repassword">Repita a senha</label>
-                    <span class="helper-text" data-error="wrong" data-success="">A senha deve
-                        ser igual"
+                    <span class="helper-text" data-error="A senha deve
+                        ser igual" data-success="">
                     </span>
                 </div>
             </div>
