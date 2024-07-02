@@ -6,10 +6,6 @@ import Product from '/lista-de-compras/model/product.js';
 $(function loadAndDisplayProducts() {
     let user = localStorage.getItem('id');
     let searchKey = localStorage.getItem('searchKey');
-    //getData(searchKey);
-
-    const produto = new ProductService();
-    let results = produto.listProducts();
 
     const productList = $('.list');
     let cardModel = document.querySelector('#card-model');
@@ -19,26 +15,26 @@ $(function loadAndDisplayProducts() {
     productList.html('').hide();
 
     if (searchKey) {
+        let results = getData(searchKey);
         results.then(
             (result) => {
                 // Itera sobre os relatórios e os adiciona à lista no HTML
-                for (let i = 0; i < result.length; i++) {
-                    let product = result[i];
+                for (let i = 0; i < result.products.length; i++) {
+                    let product = result.products[i];
 
                     const clonedCard = cardModel.cloneNode(true);
                     button.clone(true).removeClass('hide').appendTo(clonedCard);
-                    clonedCard.querySelector('.id').textContent = product.id;
 
                     clonedCard.querySelector('.barcode').src = product.barcode_image;
-                    clonedCard.querySelector('.title').textContent = product.name;
+                    clonedCard.querySelector('.title').textContent = product.description;
                     clonedCard.querySelector('.gtin').textContent = product.gtin;
                     clonedCard.querySelector('.price').textContent = `R$${(
-                        Math.random() * (result?.max_price - result?.min_price) +
-                        result?.min_price
+                        Math.random() * (product?.max_price - product?.min_price) +
+                        product?.min_price
                     ).toFixed(2)}`;
-                    clonedCard.querySelector('#img').src = product?.image;
+                    clonedCard.querySelector('#img').src = product?.thumbnail;
                     clonedCard.querySelector('.brand').textContent = product.brand
-                        ? product.brand?.name
+                        ? product.brand.name
                         : 'Não cadastrado';
                     clonedCard.querySelector('.store-name').textContent = Superpão.NAME;
                     clonedCard.querySelector('.store-address').textContent =
@@ -61,11 +57,6 @@ $(function loadAndDisplayProducts() {
         $('#no-result').show();
         alert('Sem chave de busca');
     }
-
-    // let storage = new ProductService();
-    // storage.insertProductWithFetch();
-    // console.log(result);
-    // $('#resultado').html(`oi ${result.description}`);
 });
 
 $('button').on('click', function () {
@@ -73,7 +64,6 @@ $('button').on('click', function () {
     const produtoService = new ProductService();
 
     let produto = new Product(
-        card[0].querySelector('.id').textContent,
         card[0].querySelector('.title').textContent,
         card[0].querySelector('.gtin').textContent,
         card[0].querySelector('.price').textContent,
@@ -86,6 +76,5 @@ $('button').on('click', function () {
     produto.userId = user_id;
     produtoService.insertProductWithFetch(produto).then(() => {
         alertify.success('Cadatrado com sucesso');
-        loadAndDisplayProducts();
     });
 });

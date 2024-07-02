@@ -43,7 +43,7 @@ export class UserService {
             return response;
         } catch (error) {
             console.error(error);
-            return null;
+            throw error;
         }
     }
 }

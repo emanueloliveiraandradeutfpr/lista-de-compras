@@ -20,5 +20,6 @@ export default async function getData(id) {
         return result;
     } catch (error) {
         console.error(error);
+        throw error;
     }
 }
