@@ -13,6 +13,11 @@ main {
   flex: 1 0 auto;
 }
 
+.content-center {
+  align-content: center;
+  align-items: center
+}
+
 .full-screen {
   flex-grow: 1;
 }
