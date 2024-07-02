@@ -18,6 +18,11 @@ main {
   align-items: center
 }
 
+.space {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .full-screen {
   flex-grow: 1;
 }

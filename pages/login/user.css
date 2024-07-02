@@ -1,9 +1,0 @@
-.content-center {
-    align-content: center;
-    align-items: center
-}
-
-.space {
-    display: flex;
-    justify-content: space-evenly;
-}
