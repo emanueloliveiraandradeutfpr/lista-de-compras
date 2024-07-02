@@ -10,10 +10,6 @@ $(function () {
     window.setTimeout(function () {
         $('#list-anonimo').on('click', () => {
             alertify.error('Precisa estar logado!!!');
-            let logar = confirm('Gostaria de logar?');
-            if (logar) {
-                window.location.href = '/lista-de-compras/pages/login/user.html';
-            }
         });
         $('.sidenav').sidenav();
         $('.fixed-action-btn').floatingActionButton();

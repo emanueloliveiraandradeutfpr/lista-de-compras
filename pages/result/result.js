@@ -28,10 +28,10 @@ $(function loadAndDisplayProducts() {
                     clonedCard.querySelector('.barcode').src = product.barcode_image;
                     clonedCard.querySelector('.title').textContent = product.description;
                     clonedCard.querySelector('.gtin').textContent = product.gtin;
-                    clonedCard.querySelector('.price').textContent = `R$${(
+                    clonedCard.querySelector('.price').textContent = (
                         Math.random() * (product?.max_price - product?.min_price) +
                         product?.min_price
-                    ).toFixed(2)}`;
+                    ).toFixed(2);
                     clonedCard.querySelector('#img').src = product?.thumbnail;
                     clonedCard.querySelector('.brand').textContent = product.brand
                         ? product.brand.name
