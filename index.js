@@ -18,6 +18,7 @@ $(function () {
         $('.sidenav').sidenav();
         $('select').formSelect();
         $('.collapsible').collapsible();
+        $('.modal').modal();
 
         $('input.autocomplete').autocomplete({
             data: {
