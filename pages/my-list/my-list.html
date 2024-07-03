@@ -10,6 +10,9 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Alertfy css -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
     <link rel="stylesheet" href="/lista-de-compras/index.css">
@@ -20,11 +23,41 @@
 
 <body>
     <div id="menu"></div>
-    <h2>Resultado</h2>
+    <div class="row footer-flex">
+        <div class="col">
+            <h2>Minha lista</h2>
+        </div>
+        <div class="col">
+            <a id="list-create" class="btn-floating btn-large waves-effect waves-light right modal-trigger"
+                href="#modal1">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Nova lista</h4>
+            <div class="row">
+                <form id="list-create-form" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="list-name" type="text" class="validate">
+                            <label for="list-name">Nome da Lista</label>
+                        </div>
+                    </div><button class="btn btn-large waves-effect waves-light" type="submit"
+                        name="action">Criar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="full-screen">
         <ul class="collapsible list">
             <li id="card-model" class="card">
-
+                <h2 class="list-name">Test</h2>
                 <div class="collapsible-header flex content-center ">
                     <img class=" barcode " height="67px" src="">
                     <div class="content-center title">Title</div>
@@ -33,7 +66,7 @@
                 <div class="collapsible-body">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p class="collection-item">ID:: <span class="id"></span></p>
+                            <p class="collection-item">ID: <span class="id"></span></p>
                             <p class="collection-item">GTIN: <span class="gtin"></span></p>
                             <p class="collection-item">Preço: <span class="price"></span></p>
                             <p class="collection-item">Loja Nome: <span class="store-name"></span></p>
@@ -74,11 +107,11 @@
         <!-- sem resultado -->
     </div>
 
-
     <div id="footer"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="module" src="/lista-de-compras/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     <script type="module" src="/lista-de-compras/pages/my-list/list.js"></script>
 </body>

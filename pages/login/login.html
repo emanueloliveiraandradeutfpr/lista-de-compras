@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busca de preços de alimentos na região de guarapuava">
+    <meta http-equiv="content-security-policy">
+    <title>Menor Preço</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Alertify css -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
+    <link rel="stylesheet" href="/lista-de-compras/index.css">
+    <link rel="shortcut icon" href="/lista-de-compras/assets/resources/images/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div id="menu"></div>
+    <div class="full-screen content-center">
+        <form id="login-form">
+            <div class="row login">
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="input-email" type="email" class="validate"
+                        pattern="^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)*$" required>
+                    <label for="input-email">Email</label>
+                    <span class="helper-text" data-error="Email deve conter @"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="input-password" type="password" class="validate"
+                        pattern="^[A-Za-z\d]{6,}$" required>
+                    <label for="input-password">Password</label>
+                    <span class="helper-text" data-error="A senha deve
+                        contem no mínimo 6 e não conter caracteres especiais" data-success=""></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 offset-m3 space">
+                    <button id="create" class="btn waves-effect waves-light toggle" type="button" name="create">Criar
+                        Conta
+                        <i class="material-icons right">add</i>
+                    </button>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Entrar
+                        <i class="material-icons right">send</i>
+                </div>
+
+
+                </button>
+            </div>
+        </form>
+        <form id="sign-form">
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="input-name" type="text" class="validate" pattern="^[A-Za-z\d]{6,}.{1,}$" required>
+                    <label for="input-name">Nome</label>
+                    <span class="helper-text"
+                        data-error="A nome deve contem no mínimo 6 caracteres e não conter números"
+                        data-success=""></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="email" type="email" class="validate" placeholder="usuario@email.com"
+                        pattern="^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)*$" required>
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="Email deve conter @"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <select id="input-gender" required>
+                        <option value="" disabled selected>Genero</option>
+                        <option value="male" selected>Masculino</option>
+                        <option value="female">Feminino</option>
+                    </select>
+                    <label>Genero</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="password" type="password" class="validate" minlength="6" required>
+                    <label for="password">Senha</label>
+                    <span class="helper-text" data-error="A senha deve
+                        contem no mínimo 6 caracteres" data-success=""></span>
+                </div>
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="repassword" type="password" class="validate" minlength="6" required>
+                    <label for="repassword">Repita a senha</label>
+                    <span class="helper-text" data-error="A senha deve
+                        ser igual" data-success="">
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 offset-m3 space">
+                    <div>
+                        <span>Ja é cadastrado?</span>
+                        <button class="btn waves-effect waves-light toggle" type="button" name="sign-in">Entrar</button>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit"
+                        name="action">Cadastrar
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="/lista-de-compras/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script type="module" src="login.js"></script>
+</body>

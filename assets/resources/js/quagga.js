@@ -1,5 +1,3 @@
-import getData from '/lista-de-compras/service/quagga.service.js';
-
 $('#barcode').on('click', iniciarLeitor);
 function iniciarLeitor() {
     // iniciar camera
@@ -29,10 +27,10 @@ function iniciarLeitor() {
 
     // logica do codigo de barras
     Quagga.onDetected((data) => {
-        let id = data.codeResult.code;
-        //let id = 7891150064331;
         Quagga.stop();
         $('#camera').html('');
-        getData(id);
+        let id = data.codeResult.code;
+        localStorage.setItem('searchKey', id);
+        window.location.href = '/lista-de-compras/pages/result/result.html';
     });
 }

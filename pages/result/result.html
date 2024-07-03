@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Busca de preços de alimentos na região de guarapuava">
-    <meta http-equiv="content-security-policy">
     <title>Menor Preço</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Alertfy css -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
-
+    <!-- Alertify css -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css">
 
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/lista-de-compras/assets/resources/css/materialize.css">
@@ -25,18 +23,37 @@
     <div id="menu"></div>
     <h2>Resultado</h2>
     <div class="full-screen">
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Escolha uma lista</h4>
+                <div class="row">
+                    <form id="list-create-form" class="col s12">
+                        <div class="input-field col s12">
+                            <select id="list-select">
+                                <option value="1" disabled>Escolha uma lista</option>
+                            </select>
+                            <label>Selecione a lista para adicionar</label>
+                        </div>
+                        <button class="btn btn-large waves-effect waves-light" type="submit"
+                            name="action">Criar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <ul class="collapsible list">
             <li id="card-model" class="card">
 
                 <div class="collapsible-header flex content-center ">
-                    <img class=" barcode " height="67px" src="">
+                    <img class=" barcode " height="57px" src="" alt="barcode">
                     <div class="content-center title">Title</div>
 
                 </div>
                 <div class="collapsible-body">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p class="collection-item">ID: <span class="id"></span></p>
                             <p class="collection-item">GTIN: <span class="gtin"></span></p>
                             <p class="collection-item">Preço: <span class="price"></span></p>
                             <p class="collection-item">Loja Nome: <span class="store-name"></span></p>
@@ -49,7 +66,8 @@
                 </div>
             </li>
         </ul>
-        <button class="add-cart btn-floating halfway-fab hide">
+        <button class="add-cart btn-floating halfway-fab hide modal-trigger"
+            href="#modal1">
             <i class="material-icons">add_shopping_cart</i>
         </button>
         <!-- spinner de carregamento -->
@@ -83,5 +101,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     <script type="module" src="/lista-de-compras/index.js"></script>
-    <script type="module" src="/lista-de-compras/pages/result/result.js"></script>
+    <script type="module" src="result.js"></script>
 </body>

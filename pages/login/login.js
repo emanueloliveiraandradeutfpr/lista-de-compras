@@ -1,4 +1,5 @@
 import { User } from '/lista-de-compras/model/user.js';
+import { Gender } from '/lista-de-compras/model/gender.js';
 import { UserService } from '/lista-de-compras/service/user.service.js';
 
 function manageSubmitButton(toogleForm) {
@@ -23,6 +24,10 @@ function signSubmitHandler() {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const repassword = document.getElementById('repassword').value;
+        const gender =
+            document.querySelector('#input-gender').value === 'male'
+                ? Gender.MALE
+                : Gender.FEMALE;
 
         //validação manual dentro do onSubmit - segunda fase de validação
 
@@ -37,18 +42,21 @@ function signSubmitHandler() {
         }
 
         //cadastra o paciente com os dados validados
-        let user = new User(name, email, password);
+        let user = new User(name, email, password, gender);
 
-        userService
-            .insertUserWithFetch(user)
-            .then((data) => {
+        userService.insertUserWithFetch(user).then(
+            (data) => {
                 console.log('Successo:', data);
                 alertify.success('Usuário cadastrado com sucesso!');
-            })
-            .catch((error) => {
+            },
+            (error) => {
                 console.error('Erro:', error);
                 alertify.error('Erro ao cadastrar usuário.');
-            });
+                let msg = String(error).split('  ');
+                alertify.error(msg[0]);
+                alertify.error('Try again later');
+            },
+        );
     });
 }
 
@@ -59,22 +67,38 @@ function loginSubmitHandler() {
         const email = document.getElementById('input-email').value;
         const password = document.getElementById('input-password').value;
 
-        userService.listUsers().then((response) => {
-            response.forEach((element) => {
-                if (element.email === email) {
-                    if (element.password === password) {
-                        console.log('Successo:' + response);
-                        localStorage.setItem('id', element.id);
-                        alertify.success('Entrou com sucesso!');
-                        setTimeout(
-                            (window.location.href =
-                                '/lista-de-compras/pages/my-list/my-list.html'),
-                            3000,
-                        );
-                    }
+        userService.listUsers().then(
+            (response) => {
+                try {
+                    response.forEach((element) => {
+                        if (element.email === email) {
+                            if (element.password === password) {
+                                console.log('Successo:' + response);
+                                localStorage.setItem('id', element.id);
+                                alertify.success('Entrou com sucesso!');
+                                setTimeout(
+                                    (window.location.href =
+                                        '/lista-de-compras/pages/my-list/my-list.html'),
+                                    3000,
+                                );
+                            }
+                        }
+                    });
+                    throw new ErrorEvent(
+                        'Usuario não encontrado, verifique o usuario e a senha.',
+                    );
+                } catch (error) {
+                    console.error('Erro:', error.type);
+                    alertify.error(error.type);
                 }
-            });
-        });
+            },
+            (error) => {
+                console.error('Erro:', error);
+                let msg = String(error).split('  ');
+                alertify.error(msg[0]);
+                alertify.error('Try again later');
+            },
+        );
     });
 }
 document.addEventListener('DOMContentLoaded', function () {
@@ -85,10 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
     signSubmitHandler();
 
     loginSubmitHandler();
+    $('#sign-form').hide();
 });
 
-$('#create').on('click', () => {
-    $('#login-form').hide();
-    $('#sign-form').removeClass('hide');
+$('.toggle').on('click', () => {
+    $('#login-form').toggle();
+    $('#sign-form').toggle();
     manageSubmitButton('#sign-form');
 });

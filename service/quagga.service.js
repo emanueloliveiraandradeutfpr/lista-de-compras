@@ -1,7 +1,7 @@
 export default async function getData(id) {
     //let token = '2070bd3d83mshe37ab76e58a71a2p1574a2jsn97e6c6325782';
-
     //const url = `https://go-upc-product-lookup.p.rapidapi.com/code/${id}`;
+
     const url = `https://api.cosmos.bluesoft.com.br/products?query=${id}`;
     const options = {
         method: 'GET',
@@ -20,5 +20,6 @@ export default async function getData(id) {
         return result;
     } catch (error) {
         console.error(error);
+        throw error;
     }
 }

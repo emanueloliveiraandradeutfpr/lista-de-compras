@@ -13,6 +13,23 @@ main {
   flex: 1 0 auto;
 }
 
+.content-center {
+  align-content: center;
+  align-items: center
+}
+
+.footer-flex {
+  display: flex !important;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.space {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .full-screen {
   flex-grow: 1;
 }
@@ -23,7 +40,7 @@ main {
 }
 
 .codebar {
-  margin-bottom: 15px;
+  margin-bottom: 2rem;
 }
 
 video {
