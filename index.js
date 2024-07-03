@@ -19,6 +19,7 @@ $(function () {
         $('select').formSelect();
         $('.collapsible').collapsible();
         $('.modal').modal();
+        $('select').formSelect();
 
         $('input.autocomplete').autocomplete({
             data: {

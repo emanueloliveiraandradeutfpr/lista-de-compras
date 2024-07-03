@@ -1,4 +1,4 @@
-export default class Product {
+export class Product {
     constructor(name, gtin, price, image, brand, store, barcode) {
         this.name = name;
         this.gtin = gtin;

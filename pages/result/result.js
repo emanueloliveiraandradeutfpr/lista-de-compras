@@ -1,10 +1,10 @@
 import getData from '/lista-de-compras/service/quagga.service.js';
-import { ProductService } from '/lista-de-compras/service/product.service.js';
 import { Superpão } from '/lista-de-compras/model/store.js';
-import Product from '/lista-de-compras/model/product.js';
+import { Product } from '/lista-de-compras/model/product.js';
+import { ListService } from '/lista-de-compras/service/list.service.js';
+import { ProductService } from '/lista-de-compras/service/product.service.js';
 
 $(function loadAndDisplayProducts() {
-    let user = localStorage.getItem('id');
     let searchKey = localStorage.getItem('searchKey');
 
     const productList = $('.list');
@@ -19,8 +19,8 @@ $(function loadAndDisplayProducts() {
         results.then(
             (result) => {
                 // Itera sobre os relatórios e os adiciona à lista no HTML
-                for (let i = 0; i < result.products.length; i++) {
-                    let product = result.products[i];
+                for (let i = 0; i < result.length; i++) {
+                    let product = result[i];
 
                     const clonedCard = cardModel.cloneNode(true);
                     button.clone(true).removeClass('hide').appendTo(clonedCard);
@@ -59,22 +59,39 @@ $(function loadAndDisplayProducts() {
     }
 });
 
-$('button').on('click', function () {
-    let card = $(this.parentElement);
-    const produtoService = new ProductService();
-
-    let produto = new Product(
-        card[0].querySelector('.title').textContent,
-        card[0].querySelector('.gtin').textContent,
-        card[0].querySelector('.price').textContent,
-        card[0].querySelector('#img').src,
-        card[0].querySelector('.brand').textContent,
-        Superpão,
-        card[0].querySelector('.barcode').src,
-    );
+$('.add-cart').on('click', function () {
     let user_id = localStorage.getItem('id');
-    produto.userId = user_id;
-    produtoService.insertProductWithFetch(produto).then(() => {
-        alertify.success('Cadatrado com sucesso');
+    const listService = new ListService();
+    let select = document.querySelector('#list-select');
+
+    listService.getMyLists(user_id).then((result) => {
+        for (let i = 0; i < result.lists.length; i++) {
+            let list = result.lists[i];
+            let option = document.querySelector('#list-select > option').cloneNode(true);
+            $(option).removeAttr('disabled');
+            option.textContent = list.name;
+            option.value = list.id;
+            select.append(option);
+        }
+        $('select').formSelect();
+    });
+    $('#list-create-form').on('submit', (event) => {
+        event.preventDefault();
+
+        let card = $(this.parentElement);
+        const produtoService = new ProductService();
+        let produto = new Product(
+            card[0].querySelector('.title').textContent,
+            card[0].querySelector('.gtin').textContent,
+            card[0].querySelector('.price').textContent,
+            card[0].querySelector('#img').src,
+            card[0].querySelector('.brand').textContent,
+            Superpão,
+            card[0].querySelector('.barcode').src,
+        );
+        produto.listId = $('#list-create-form').find(':selected').val();
+        produtoService.insertProductWithFetch(produto).then(() => {
+            alertify.success('Cadatrado com sucesso');
+        });
     });
 });
